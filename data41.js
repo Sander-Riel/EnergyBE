@@ -2281,11 +2281,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var belastingen2035High = parseInt(
-      document.getElementById('2035resultBelastingenHigh').innerHTML,
+      Math.round(value2035HighSummary * belastingenPercentage),
       10
     );
     var belastingen2023High = parseInt(
-      document.getElementById('2023resultBelastingenHigh').innerHTML,
+      Math.round(value2023HighSummary * belastingenPercentage),
       10
     );
     var belastingenDifferenceHigh = belastingen2023High - belastingen2035High;
@@ -2314,11 +2314,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var belastingen2035Low = parseInt(
-      document.getElementById('2035resultBelastingenLow').innerHTML,
+      Math.round(total2035Low * belastingenPercentage),
       10
     );
     var belastingen2023Low = parseInt(
-      document.getElementById('2023resultBelastingen').innerHTML,
+      Math.round(total2023 * belastingenPercentage),
       10
     );
     var belastingenDifferenceLow = belastingen2023Low - belastingen2035Low;
