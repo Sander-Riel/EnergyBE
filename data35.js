@@ -1673,9 +1673,35 @@ document.addEventListener('DOMContentLoaded', function () {
   );
 
   function fillInputs {
-    document.getElementById('StroomInput').value = 1200;
-    document.getElementById('GasInput').value = 1345;
-    document.getElementById('WarmteInput').value = 2353;
+      var index = parseInt(selectedRadio.id.replace('Personen', '')) - 1;
+      var gemiddeldM32023 =
+        prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
+          'gemiddeld m3'
+        ][index];
+      var gemiddeldKwH2023 =
+        prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
+          'gemiddeld kwH'
+        ][index];
+      var gemiddeldM32035 =
+        prices2035[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
+          'gemiddeld m3'
+        ][index];
+      var gemiddeldKwH2035 =
+        prices2035[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
+          'gemiddeld kwH'
+        ][index];
+      var gemiddeldGj2023 =
+        prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
+          'gemiddeld Gj'
+        ][index];
+      var gemiddeldGj2035 =
+        prices2035[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
+          'gemiddeld Gj'
+        ][index];
+
+      document.getElementById('GasInput').value = gemiddeldM32023;
+      document.getElementById('StroomInput').value = gemiddeldKwH2023;
+      document.getElementById('WarmteInput').value = gemiddeldGj2023;
   }
   
   document.getElementById('personButton').onclick = fillInputs;
@@ -1801,35 +1827,7 @@ document.addEventListener('DOMContentLoaded', function () {
       selectedBouwjaar &&
       selectedHeatingSystem
     ) {
-      var index = parseInt(selectedRadio.id.replace('Personen', '')) - 1;
-      var gemiddeldM32023 =
-        prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
-          'gemiddeld m3'
-        ][index];
-      var gemiddeldKwH2023 =
-        prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
-          'gemiddeld kwH'
-        ][index];
-      var gemiddeldM32035 =
-        prices2035[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
-          'gemiddeld m3'
-        ][index];
-      var gemiddeldKwH2035 =
-        prices2035[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
-          'gemiddeld kwH'
-        ][index];
-      var gemiddeldGj2023 =
-        prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
-          'gemiddeld Gj'
-        ][index];
-      var gemiddeldGj2035 =
-        prices2035[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
-          'gemiddeld Gj'
-        ][index];
 
-      document.getElementById('GasInput').value = gemiddeldM32023;
-      document.getElementById('StroomInput').value = gemiddeldKwH2023;
-      document.getElementById('WarmteInput').value = gemiddeldGj2023;
 
       var gemiddeldM32035Low = gemiddeldM32035 * 0.4275;
       var gemiddeldKwH2035Low = gemiddeldKwH2035 * 0.13;
