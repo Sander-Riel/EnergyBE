@@ -1,3 +1,5 @@
+
+// Usage data --START--
 var prices2023 = {
   //1
   'CV-ketel': {
@@ -1507,6 +1509,8 @@ var prices2035 = {
     },
   },
 };
+// Usage data --END--
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var heaterButton = document.getElementById('heaterButton');
