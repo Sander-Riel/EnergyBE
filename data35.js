@@ -1672,7 +1672,7 @@ document.addEventListener('DOMContentLoaded', function () {
     'input[name="Zonnepanelen"]'
   );
 
-  function fillInputs {
+  function fillInputs () {
       var index = parseInt(selectedRadio.id.replace('Personen', '')) - 1;
       var gemiddeldM32023 =
         prices2023[selectedHeatingSystem][selectedWoning][selectedBouwjaar][
