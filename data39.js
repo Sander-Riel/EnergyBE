@@ -1822,15 +1822,15 @@ document.addEventListener('DOMContentLoaded', function () {
       resultTeruglevering2035High;
 
 
-    var gemiddeldM32035Low = gasInput * 0.4275;
+    var gemiddeldM32035Low = stroom2Input * 0.4275;
     var gemiddeldKwH2035Low = stroomInput * 0.13;
-    var gemiddeldM32035High = gasInput * 0.63;
+    var gemiddeldM32035High = stroom2Input * 0.63;
     var gemiddeldKwH2035High = stroomInput * 0.23;
-    var gemiddeldGj2035Low = warmteInput * 12.36;
-    var gemiddeldGj2035High = warmteInput * 36.24;
-    var gemiddeldGj2023 = warmteInput * 39.16;
+    var gemiddeldGj2035Low = stroom3Input * 12.36;
+    var gemiddeldGj2035High = stroom3Input * 36.24;
+    var gemiddeldGj2023 = stroom3Input * 39.16;
     var gemiddeldKwH2023 = stroomInput * 0.19;
-    var gemiddeldM32023 = gasInput * 0.66;
+    var gemiddeldM32023 = stroom2Input * 0.66;
 
     if (isStroomInputValid) {
       stroomInput = parseFloat(stroomInput);
