@@ -1715,6 +1715,10 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('calculate').onclick = calculate;
 
   function calculate() {
+    var belastingenPercentage = 0.21;
+
+
+    
     var stroomInput = document.getElementById('StroomInput').value;
     if(stroomInput === undefined){
       stroomInput = 0;
@@ -2413,7 +2417,7 @@ document.addEventListener('DOMContentLoaded', function () {
       );
     }
 
-    var belastingenPercentage = 0.21;
+
 
     var value2023LowSummary = parseInt(
       document.getElementById('2023lowSummary').innerText,
