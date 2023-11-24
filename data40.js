@@ -2772,19 +2772,19 @@ document.addEventListener('DOMContentLoaded', function () {
       width2035HighNetbeheer + '%';
 
     var value2023LowBelastingen = parseInt(
-      document.getElementById('2023resultBelastingen').innerHTML,
+      Math.round(value2023HighSummary * belastingenPercentage),
       10
     );
     var value2035LowBelastingen = parseInt(
-      document.getElementById('2035resultBelastingenLow').innerHTML,
+      Math.round(value2035LowSummary * belastingenPercentage),
       10
     );
     var value2023HighBelastingen = parseInt(
-      document.getElementById('2023resultBelastingenHigh').innerHTML,
+      Math.round(value2023HighSummary * belastingenPercentage),
       10
     );
     var value2035HighBelastingen = parseInt(
-      document.getElementById('2035resultBelastingenHigh').innerHTML,
+      Math.round(value2035HighSummary * belastingenPercentage),
       10
     );
 
