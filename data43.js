@@ -1559,61 +1559,61 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var toggleHeaterButtonState = function () {
     if (checkRadioHeaterSelected()) {
-      heaterButton.style.display = 'block';
+      heaterButton.style.display = 'flex';
       heaterButtonDisabled.style.display = 'none';
     } else {
       heaterButton.style.display = 'none';
-      heaterButtonDisabled.style.display = 'block';
+      heaterButtonDisabled.style.display = 'flex';
     }
-    heaterText.style.display = 'block';
+    heaterText.style.display = 'flex';
     heaterTextDisabled.style.display = 'none';
   };
 
   var togglePanelButtonState = function () {
     if (checkRadioPanelSelected()) {
-      panelButton.style.display = 'block';
+      panelButton.style.display = 'flex';
       panelButtonDisabled.style.display = 'none';
     } else {
       panelButton.style.display = 'none';
-      panelButtonDisabled.style.display = 'block';
+      panelButtonDisabled.style.display = 'flex';
     }
-    panelText.style.display = 'block';
+    panelText.style.display = 'flex';
     panelTextDisabled.style.display = 'none';
   };
 
   var toggleHouseButtonState = function () {
     if (checkRadioHouseSelected()) {
-      houseButton.style.display = 'block';
+      houseButton.style.display = 'flex';
       houseButtonDisabled.style.display = 'none';
     } else {
       houseButton.style.display = 'none';
-      houseButtonDisabled.style.display = 'block';
+      houseButtonDisabled.style.display = 'flex';
     }
-    houseText.style.display = 'block';
+    houseText.style.display = 'flex';
     houseTextDisabled.style.display = 'none';
   };
 
   var toggleYearButtonState = function () {
     if (checkRadioYearSelected()) {
-      yearButton.style.display = 'block';
+      yearButton.style.display = 'flex';
       yearButtonDisabled.style.display = 'none';
     } else {
       yearButton.style.display = 'none';
-      yearButtonDisabled.style.display = 'block';
+      yearButtonDisabled.style.display = 'flex';
     }
-    yearText.style.display = 'block';
+    yearText.style.display = 'flex';
     yearTextDisabled.style.display = 'none';
   };
 
   var togglePersonButtonState = function () {
     if (checkRadioPersonSelected()) {
-      personButton.style.display = 'block';
+      personButton.style.display = 'flex';
       personButtonDisabled.style.display = 'none';
     } else {
       personButton.style.display = 'none';
-      personButtonDisabled.style.display = 'block';
+      personButtonDisabled.style.display = 'flex';
     }
-    personText.style.display = 'block';
+    personText.style.display = 'flex';
     personTextDisabled.style.display = 'none';
   };
 
@@ -1639,27 +1639,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
   heaterButtonDisabled.addEventListener('click', () => {
     heaterText.style.display = 'none';
-    heaterTextDisabled.style.display = 'block';
+    heaterTextDisabled.style.display = 'flex';
   });
 
   panelButtonDisabled.addEventListener('click', () => {
     panelText.style.display = 'none';
-    panelTextDisabled.style.display = 'block';
+    panelTextDisabled.style.display = 'flex';
   });
 
   houseButtonDisabled.addEventListener('click', () => {
     houseText.style.display = 'none';
-    houseTextDisabled.style.display = 'block';
+    houseTextDisabled.style.display = 'flex';
   });
 
   yearButtonDisabled.addEventListener('click', () => {
     yearText.style.display = 'none';
-    yearTextDisabled.style.display = 'block';
+    yearTextDisabled.style.display = 'flex';
   });
 
   personButtonDisabled.addEventListener('click', () => {
     personText.style.display = 'none';
-    personTextDisabled.style.display = 'block';
+    personTextDisabled.style.display = 'flex';
   });
 
   toggleHeaterButtonState();
@@ -1964,11 +1964,11 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     if (difference >= 0) {
-      resultHighGreen.style.display = 'block';
+      resultHighGreen.style.display = 'flex';
       resultHighRed.style.display = 'none';
       highResultDifferencePlus.innerText = difference;
     } else {
-      resultHighRed.style.display = 'block';
+      resultHighRed.style.display = 'flex';
       resultHighGreen.style.display = 'none';
       highResultDifferenceMinus.innerText = Math.abs(difference);
     }
@@ -2272,12 +2272,12 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     if (netbeheerkostenDifferenceHigh >= 0) {
-      netbeheerkostenHighGreen.style.display = 'block';
+      netbeheerkostenHighGreen.style.display = 'flex';
       netbeheerkostenHighRed.style.display = 'none';
       highNetbeheerkostenDifferencePlus.innerText =
         netbeheerkostenDifferenceHigh;
     } else {
-      netbeheerkostenHighRed.style.display = 'block';
+      netbeheerkostenHighRed.style.display = 'flex';
       netbeheerkostenHighGreen.style.display = 'none';
       highNetbeheerkostenDifferenceMinus.innerText = Math.abs(
         netbeheerkostenDifferenceHigh
@@ -2306,11 +2306,11 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     if (belastingenDifferenceHigh >= 0) {
-      belastingenHighGreen.style.display = 'block';
+      belastingenHighGreen.style.display = 'flex';
       belastingenHighRed.style.display = 'none';
       highBelastingenDifferencePlus.innerText = belastingenDifferenceHigh;
     } else {
-      belastingenHighRed.style.display = 'block';
+      belastingenHighRed.style.display = 'flex';
       belastingenHighGreen.style.display = 'none';
       highBelastingenDifferenceMinus.innerText = Math.abs(
         belastingenDifferenceHigh
@@ -2406,11 +2406,11 @@ document.addEventListener('DOMContentLoaded', function () {
     );
 
     if (terugleveringDifferenceHigh >= 0) {
-      terugleveringHighGreen.style.display = 'block';
+      terugleveringHighGreen.style.display = 'flex';
       terugleveringHighRed.style.display = 'none';
       highTerugleveringDifferencePlus.innerText = terugleveringDifferenceHigh;
     } else {
-      terugleveringHighRed.style.display = 'block';
+      terugleveringHighRed.style.display = 'flex';
       terugleveringHighGreen.style.display = 'none';
       highTerugleveringDifferenceMinus.innerText = Math.abs(
         terugleveringDifferenceHigh
