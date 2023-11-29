@@ -1717,8 +1717,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function calculate() {
     var belastingenPercentage = 0.21;
 
-
-    
     var stroomInput = document.getElementById('StroomInput').value;
     if(stroomInput === undefined){
       stroomInput = 0;
@@ -1778,15 +1776,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     switch (selectedZonnepanelen) {
       case '1-10-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenAdjustment = -2700;
         break;
       case '10-20-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenAdjustment = -5400;
         break;
       case '20-30-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenAdjustment = -8100;
         break;
       case '30-of-meer-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenAdjustment = -10800;
         break;
     }
