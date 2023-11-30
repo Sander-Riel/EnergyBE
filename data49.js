@@ -1849,10 +1849,6 @@ document.addEventListener('DOMContentLoaded', function () {
       gemiddeldGj2023 = stroom3Input * 39.16;
     }
 
-    gemiddeldKwH2023 += zonnepanelenAdjustment;
-    gemiddeldKwH2035Low += zonnepanelenAdjustment;
-    gemiddeldKwH2035High += zonnepanelenAdjustment;
-
     gemiddeldKwH2023 = Math.max(gemiddeldKwH2023, 0);
     gemiddeldKwH2035Low = Math.max(gemiddeldKwH2035Low, 0);
     gemiddeldKwH2035High = Math.max(gemiddeldKwH2035High, 0);
