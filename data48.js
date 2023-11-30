@@ -2215,10 +2215,86 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+//=====================
 
+    var value2023LowLeveringskostenElectra = parseInt(60.33, 10);
+    var value2023LowLeveringskostenGas = parseInt(59.50, 10);
+    var value2023LowLeveringskostenWarmte = parseInt(503.53, 10);
+    
+    var value2035LowLeveringskostenElectra = parseInt(60.33, 10);
+    var value2035LowLeveringskostenGas = parseInt(59.50, 10);
+    var value2035LowLeveringskostenWarmte = parseInt(929.95, 10);
+    
+    var value2023HighLeveringskostenElectra = parseInt(60.33, 10);
+    var value2023HighLeveringskostenGas = parseInt(59.50, 10);
+    var value2023HighLeveringskostenWarmte = parseInt(503.53, 10);
+    
+    var value2035HighLeveringskostenElectra = parseInt(60.33, 10);
+    var value2035HighLeveringskostenGas = parseInt(59.50, 10);
+    var value2035HighLeveringskostenWarmte = parseInt(1286.64, 10);
 
+    //Todo: Bereken de uitkomst voor dit geval
+    var value2023LowLeveringskosten = 0;
+    var value2035LowLeveringskosten = 0;
+    var value2023HighLeveringskosten = 0;
+    var value2035HighLeveringskosten = 0;
 
+    //Stroom
+    if(stroomInput > 0) {
+      value2023LowLeveringskosten += value2023LowLeveringskostenElectra;
+      value2035LowLeveringskosten += value2035LowLeveringskostenElectra;
+      value2023HighLeveringskosten += value2023HighLeveringskostenElectra;
+      value2035HighLeveringskosten += value2035HighLeveringskostenElectra;
+    }
 
+    //Gas
+    if(stroom2Input > 0) {
+      value2023LowLeveringskosten += value2023LowLeveringskostenGas;
+      value2035LowLeveringskosten += value2035LowLeveringskostenGas;
+      value2023HighLeveringskosten += value2023HighLeveringskostenGas;
+      value2035HighLeveringskosten += value2035HighLeveringskostenGas;
+    }
+
+    //warmte
+    if(stroom3Input > 0) {
+      value2023LowLeveringskosten += value2023LowLeveringskostenWarmte;
+      value2035LowLeveringskosten += value2035LowLeveringskostenWarmte;
+      value2023HighLeveringskosten += value2023HighLeveringskostenWarmte;
+      value2035HighLeveringskosten += value2035HighLeveringskostenWarmte;
+    }
+
+    
+    document.getElementById('2035resultLeveringskostenLow').innerHTML = value2023LowLeveringskosten;
+    document.getElementById('2023resultLeveringskosten').innerHTML = value2023LowLeveringskosten;    
+    document.getElementById('2035resultLeveringskostenHigh').innerHTML = value2035HighLeveringskosten;
+    document.getElementById('2023resultLeveringskostenHigh').innerHTML = value2023HighLeveringskosten;
+
+    var maxValueLeveringskostenResult = Math.max(
+      value2023LowLeveringskosten,
+      value2035LowLeveringskosten,
+      value2023HighLeveringskosten,
+      value2035HighLeveringskosten
+    );
+
+    var width2023LowLeveringskosten =
+      (value2023LowLeveringskosten / maxValueLeveringskostenResult) * 100;
+    var width2035LowLeveringskosten =
+      (value2035LowLeveringskosten / maxValueLeveringskostenResult) * 100;
+    var width2023HighLeveringskosten =
+      (value2023HighLeveringskosten / maxValueLeveringskostenResult) * 100;
+    var width2035HighLeveringskosten =
+      (value2035HighLeveringskosten / maxValueLeveringskostenResult) * 100;
+
+    document.getElementById('barLeveringskosten2023LowFill').style.width =
+      width2023LowLeveringskosten + '%';
+    document.getElementById('barLeveringskosten2035LowFill').style.width =
+      width2035LowLeveringskosten + '%';
+    document.getElementById('barLeveringskosten2023HighFill').style.width =
+      width2023HighLeveringskosten + '%';
+    document.getElementById('barLeveringskosten2035HighFill').style.width =
+      width2035HighLeveringskosten + '%';
+
+    
     var leveringskosten2035Low = parseInt(
       document.getElementById('2035resultLeveringskostenLow').innerHTML,
       10
@@ -2256,6 +2332,9 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('2023resultLeveringskostenHigh').innerHTML,
       10
     );
+
+//*******************************
+    
     var leveringskostenDifferenceHigh = leveringskosten2023High - leveringskosten2035High;
 
     var leveringskostenHighGreen = document.getElementById('leveringskostenHighGreen');
@@ -2280,7 +2359,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+//=============================
 
     
 
@@ -2644,85 +2723,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('barWarmte2035HighFill').style.width =
       width2035HighWarmte + '%';
 
-
-
-
-
-
-    var value2023LowLeveringskostenElectra = parseInt(60.33, 10);
-    var value2023LowLeveringskostenGas = parseInt(59.50, 10);
-    var value2023LowLeveringskostenWarmte = parseInt(503.53, 10);
     
-    var value2035LowLeveringskostenElectra = parseInt(60.33, 10);
-    var value2035LowLeveringskostenGas = parseInt(59.50, 10);
-    var value2035LowLeveringskostenWarmte = parseInt(929.95, 10);
-    
-    var value2023HighLeveringskostenElectra = parseInt(60.33, 10);
-    var value2023HighLeveringskostenGas = parseInt(59.50, 10);
-    var value2023HighLeveringskostenWarmte = parseInt(503.53, 10);
-    
-    var value2035HighLeveringskostenElectra = parseInt(60.33, 10);
-    var value2035HighLeveringskostenGas = parseInt(59.50, 10);
-    var value2035HighLeveringskostenWarmte = parseInt(1286.64, 10);
-
-    //Todo: Bereken de uitkomst voor dit geval
-    var value2023LowLeveringskosten = 0;
-    var value2035LowLeveringskosten = 0;
-    var value2023HighLeveringskosten = 0;
-    var value2035HighLeveringskosten = 0;
-
-    //Stroom
-    if(stroomInput > 0) {
-      value2023LowLeveringskosten += value2023LowLeveringskostenElectra;
-      value2035LowLeveringskosten += value2035LowLeveringskostenElectra;
-      value2023HighLeveringskosten += value2023HighLeveringskostenElectra;
-      value2035HighLeveringskosten += value2035HighLeveringskostenElectra;
-    }
-
-    //Gas
-    if(stroom2Input > 0) {
-      value2023LowLeveringskosten += value2023LowLeveringskostenGas;
-      value2035LowLeveringskosten += value2035LowLeveringskostenGas;
-      value2023HighLeveringskosten += value2023HighLeveringskostenGas;
-      value2035HighLeveringskosten += value2035HighLeveringskostenGas;
-    }
-
-    //warmte
-    if(stroom3Input > 0) {
-      value2023LowLeveringskosten += value2023LowLeveringskostenWarmte;
-      value2035LowLeveringskosten += value2035LowLeveringskostenWarmte;
-      value2023HighLeveringskosten += value2023HighLeveringskostenWarmte;
-      value2035HighLeveringskosten += value2035HighLeveringskostenWarmte;
-    }
-
-    var maxValueLeveringskostenResult = Math.max(
-      value2023LowLeveringskosten,
-      value2035LowLeveringskosten,
-      value2023HighLeveringskosten,
-      value2035HighLeveringskosten
-    );
-
-    var width2023LowLeveringskosten =
-      (value2023LowLeveringskosten / maxValueLeveringskostenResult) * 100;
-    var width2035LowLeveringskosten =
-      (value2035LowLeveringskosten / maxValueLeveringskostenResult) * 100;
-    var width2023HighLeveringskosten =
-      (value2023HighLeveringskosten / maxValueLeveringskostenResult) * 100;
-    var width2035HighLeveringskosten =
-      (value2035HighLeveringskosten / maxValueLeveringskostenResult) * 100;
-
-    document.getElementById('barLeveringskosten2023LowFill').style.width =
-      width2023LowLeveringskosten + '%';
-    document.getElementById('barLeveringskosten2035LowFill').style.width =
-      width2035LowLeveringskosten + '%';
-    document.getElementById('barLeveringskosten2023HighFill').style.width =
-      width2023HighLeveringskosten + '%';
-    document.getElementById('barLeveringskosten2035HighFill').style.width =
-      width2035HighLeveringskosten + '%';
-
-
-    
-
     var value2023LowNetbeheer = parseInt(
       document.getElementById('2023NetbeheerkostenLow').innerHTML,
       10
