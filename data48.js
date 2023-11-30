@@ -1772,26 +1772,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var selectedZonnepanelen = document.querySelector(
       'input[name="Zonnepanelen"]:checked'
     ).value;
-    var zonnepanelenAdjustment = 0;
-
-    switch (selectedZonnepanelen) {
-      case '1-10-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
-        zonnepanelenAdjustment = -2700;
-        break;
-      case '10-20-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
-        zonnepanelenAdjustment = -5400;
-        break;
-      case '20-30-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
-        zonnepanelenAdjustment = -8100;
-        break;
-      case '30-of-meer-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
-        zonnepanelenAdjustment = -10800;
-        break;
-    }
 
     var zonnepanelenValue = 0;
 
@@ -1800,15 +1780,19 @@ document.addEventListener('DOMContentLoaded', function () {
         zonnepanelenValue = 0;
         break;
       case '1-10-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenValue = 2700;
         break;
       case '10-20-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenValue = 5400;
         break;
       case '20-30-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenValue = 8100;
         break;
       case '30-of-meer-zonnepanelen':
+        document.getElementById('zonnepanelenListItem').display = 'none';
         zonnepanelenValue = 10800;
         break;
     }
@@ -1827,7 +1811,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('2035resultTerugleveringHigh').textContent =
       resultTeruglevering2035High;
 
-
     var gemiddeldM32035Low = stroom2Input * 0.4275;
     var gemiddeldKwH2035Low = stroomInput * 0.13;
     var gemiddeldM32035High = stroom2Input * 0.63;
@@ -1838,25 +1821,32 @@ document.addEventListener('DOMContentLoaded', function () {
     var gemiddeldKwH2023 = stroomInput * 0.19;
     var gemiddeldM32023 = stroom2Input * 0.66;
 
+    var correctedPowerUsage = 0;
+
+    if(stroomInput - zonnepanelenValue > 0){
+      correctedPowerUsage = stroomInput - zonnepanelenValue;
+    }
+      
+
     if (isStroomInputValid) {
-      stroomInput = parseFloat(stroomInput);
-      gemiddeldKwH2035Low = stroomInput * 0.13 + 60.33;
-      gemiddeldKwH2035High = stroomInput * 0.23 + 60.33;
-      gemiddeldKwH2023 = stroomInput * 0.19 + 60.33;
+      correctedPowerUsage = parseFloat(correctedPowerUsage);
+      gemiddeldKwH2035Low = correctedPowerUsage * 0.13;
+      gemiddeldKwH2035High = correctedPowerUsage * 0.23;
+      gemiddeldKwH2023 = correctedPowerUsage * 0.19;
     }
 
     if (isStroom2InputValid) {
       stroom2Input = parseFloat(stroom2Input);
-      gemiddeldM32035Low = stroom2Input * 0.43 + 59.5;
-      gemiddeldM32035High = stroom2Input * 0.63 + 59.5;
-      gemiddeldM32023 = stroom2Input * 0.66 + 59.5;
+      gemiddeldM32035Low = stroom2Input * 0.43;
+      gemiddeldM32035High = stroom2Input * 0.63;
+      gemiddeldM32023 = stroom2Input * 0.66;
     }
 
     if (isStroom3InputValid) {
       stroom3Input = parseFloat(stroom3Input);
-      gemiddeldGj2035Low = stroom3Input * 12.36 + 929.95;
-      gemiddeldGj2035High = stroom3Input * 36.24 + 1286.64;
-      gemiddeldGj2023 = stroom3Input * 39.16 + 503.53;
+      gemiddeldGj2035Low = stroom3Input * 12.36;
+      gemiddeldGj2035High = stroom3Input * 36.24;
+      gemiddeldGj2023 = stroom3Input * 39.16;
     }
 
     gemiddeldKwH2023 += zonnepanelenAdjustment;
