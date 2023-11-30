@@ -2213,6 +2213,77 @@ document.addEventListener('DOMContentLoaded', function () {
       lowWarmteDifferenceMinus.innerText = Math.abs(warmteDifferenceLow);
     }
 
+
+
+
+
+
+
+    var leveringskosten2035Low = parseInt(
+      document.getElementById('2035resultLeveringskostenLow').innerHTML,
+      10
+    );
+    var leveringskosten2023Low = parseInt(
+      document.getElementById('2023resultLeveringskosten').innerHTML,
+      10
+    );
+    var leveringskostenDifferenceLow = leveringskosten2023Low - leveringskosten2035Low;
+
+    var leveringskostenLowGreen = document.getElementById('leveringskostenLowGreen');
+    var leveringskostenLowRed = document.getElementById('leveringskostenLowRed');
+    var lowLeveringskostenDifferencePlus = document.getElementById(
+      'lowLeveringskostenDifferencePlus'
+    );
+    var lowLeveringskostenDifferenceMinus = document.getElementById(
+      'lowLeveringskostenDifferenceMinus'
+    );
+
+    if (leveringskostenDifferenceLow >= 0) {
+      leveringskostenLowGreen.style.display = 'flex';
+      leveringskostenLowRed.style.display = 'none';
+      lowLeveringskostenDifferencePlus.innerText = leveringskostenDifferenceLow;
+    } else {
+      leveringskostenLowRed.style.display = 'flex';
+      leveringskostenLowGreen.style.display = 'none';
+      lowLeveringskostenDifferenceMinus.innerText = Math.abs(leveringskostenDifferenceLow);
+    }
+
+    var leveringskosten2035High = parseInt(
+      document.getElementById('2035resultLeveringskostenHigh').innerHTML,
+      10
+    );
+    var leveringskosten2023High = parseInt(
+      document.getElementById('2023resultLeveringskostenHigh').innerHTML,
+      10
+    );
+    var leveringskostenDifferenceHigh = leveringskosten2023High - leveringskosten2035High;
+
+    var leveringskostenHighGreen = document.getElementById('leveringskostenHighGreen');
+    var leveringskostenHighRed = document.getElementById('leveringskostenHighRed');
+    var highLeveringskostenDifferencePlus = document.getElementById(
+      'highLeveringskostenDifferencePlus'
+    );
+    var highLeveringskostenDifferenceMinus = document.getElementById(
+      'highLeveringskostenDifferenceMinus'
+    );
+
+    if (leveringskostenDifferenceHigh >= 0) {
+      leveringskostenHighGreen.style.display = 'flex';
+      leveringskostenHighRed.style.display = 'none';
+      highLeveringskostenDifferencePlus.innerText = leveringskostenDifferenceHigh;
+    } else {
+      leveringskostenHighRed.style.display = 'flex';
+      leveringskostenHighGreen.style.display = 'none';
+      highLeveringskostenDifferenceMinus.innerText = Math.abs(leveringskostenDifferenceHigh);
+    }
+
+
+
+
+
+
+    
+
     var netbeheerkosten2035Low = parseInt(
       document.getElementById('2035NetbeheerkostenLow').innerHTML,
       10
