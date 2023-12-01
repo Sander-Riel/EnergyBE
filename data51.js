@@ -1709,15 +1709,15 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('StroomInput').value = gemiddeldKwH2023;
       document.getElementById('WarmteInput').value = gemiddeldGj2023;
 
-      document.getElementById('GasInput').addEventListener('keypress', function( e ) {
-          if(this.value.length==6) return false;    
-      }, false);
-      document.getElementById('StroomInput').addEventListener('keypress', function( e ) {
-          if(this.value.length==6) return false;    
-      }, false);
-      document.getElementById('WarmteInput').addEventListener('keypress', function( e ) {
-          if(this.value.length==6) return false;    
-      }, false);
+      document.getElementById('GasInput').addEventListener('keyup', function (event) {
+          if(this.value.length >= 6){ this.value = this.value.substr(0, 6);}
+      });
+      document.getElementById('StroomInput').addEventListener('keyup', function( e ) {
+          if(this.value.length >= 6){ this.value = this.value.substr(0, 6);}  
+      });
+      document.getElementById('WarmteInput').addEventListener('keyup', function( e ) {
+          if(this.value.length >= 6){ this.value = this.value.substr(0, 6);}  
+      });
   }
   
   document.getElementById('personButton').onclick = fillInputs;
