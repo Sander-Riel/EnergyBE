@@ -2355,14 +2355,7 @@ document.addEventListener('DOMContentLoaded', function () {
       leveringskostenHighRed.style.display = 'flex';
       leveringskostenHighGreen.style.display = 'none';
       highLeveringskostenDifferenceMinus.innerText = Math.abs(leveringskostenDifferenceHigh);
-    }
-
-
-
-
-//=============================
-
-    
+    }   
 
     var netbeheerkosten2035Low = parseInt(
       document.getElementById('2035NetbeheerkostenLow').innerHTML,
@@ -2441,11 +2434,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var belastingen2035High = parseInt(
-      Math.round(value2035HighSummary * belastingenPercentage),
+      Math.round(total2035High * belastingenPercentage),
       10
     );
     var belastingen2023High = parseInt(
-      Math.round(value2023HighSummary * belastingenPercentage),
+      Math.round(total2023High * belastingenPercentage),
       10
     );
     var belastingenDifferenceHigh = belastingen2023High - belastingen2035High;
@@ -2579,8 +2572,6 @@ document.addEventListener('DOMContentLoaded', function () {
       );
     }
 
-
-
     var value2023LowSummary = parseInt(
       document.getElementById('2023lowSummary').innerText,
       10
@@ -2589,26 +2580,14 @@ document.addEventListener('DOMContentLoaded', function () {
       total2023 * belastingenPercentage
     );
 
-    var value2035LowSummary = parseInt(
-      document.getElementById('2035lowSummary').innerText,
-      10
-    );
     document.getElementById('2035resultBelastingenLow').innerHTML =
       Math.round(total2035Low * belastingenPercentage);
 
-    var value2023HighSummary = parseInt(
-      document.getElementById('2023highSummary').innerText,
-      10
-    );
     document.getElementById('2023resultBelastingenHigh').innerHTML =
-      Math.round(value2023HighSummary * belastingenPercentage);
+      Math.round(total2023High * belastingenPercentage);
 
-    var value2035HighSummary = parseInt(
-      document.getElementById('2035highSummary').innerText,
-      10
-    );
     document.getElementById('2035resultBelastingenHigh').innerHTML =
-      Math.round(value2035HighSummary * belastingenPercentage);
+      Math.round(total2035High * belastingenPercentage);
     //BarStarts
 
     var value2023LowElectric = parseInt(
