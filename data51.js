@@ -1728,15 +1728,20 @@ document.addEventListener('DOMContentLoaded', function () {
       stroom2Input = 0;
     }
     var isStroom2InputValid = stroom2Input && !isNaN(stroom2Input);
+    
+    if(stroomInput2 == 0)
+    {
+      document.getElementsByClassName('resultaat-verbruik-blocks')[0].children[1].style.display = 'none';
+    }
 
     var stroom3Input = document.getElementById('WarmteInput').value;
     if(stroom3Input === undefined){
       stroom3Input = 0;
     }
 
-    if(stroomInput == 0)
+    if(stroomInput3 == 0)
     {
-      document.getElementsByClassName('resultaat-verbruik-blocks')[1].style.display = 'none';
+      document.getElementsByClassName('resultaat-verbruik-blocks')[0].children[2].style.display = 'none';
     }
     var isStroom3InputValid = stroom3Input && !isNaN(stroom3Input);
 
@@ -1782,6 +1787,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     switch (selectedZonnepanelen) {
       case 'Geen-zonnepanelen':
+        document.getElementsByClassName('resultaat-verbruik-blocks')[0].children[6].style.display = 'none';
         zonnepanelenValue = 0;
         break;
       case '1-10-zonnepanelen':
