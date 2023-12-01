@@ -1733,6 +1733,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if(stroom3Input === undefined){
       stroom3Input = 0;
     }
+
+    if(stroomInput == 0)
+    {
+      document.getElementsByClassName('resultaat-verbruik-blocks')[1].style.display = 'none';
+    }
     var isStroom3InputValid = stroom3Input && !isNaN(stroom3Input);
 
     var resultElementGas2023 = document.getElementById('2023resultGas');
