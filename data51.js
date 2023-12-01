@@ -1780,19 +1780,19 @@ document.addEventListener('DOMContentLoaded', function () {
         zonnepanelenValue = 0;
         break;
       case '1-10-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
+        document.getElementById('zonnepanelenListItem').style.display = 'none';
         zonnepanelenValue = 2700;
         break;
       case '10-20-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
+        document.getElementById('zonnepanelenListItem').style.display = 'none';
         zonnepanelenValue = 5400;
         break;
       case '20-30-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
+        document.getElementById('zonnepanelenListItem').style.display = 'none';
         zonnepanelenValue = 8100;
         break;
       case '30-of-meer-zonnepanelen':
-        document.getElementById('zonnepanelenListItem').display = 'none';
+        document.getElementById('zonnepanelenListItem').style.display = 'none';
         zonnepanelenValue = 10800;
         break;
     }
@@ -2333,8 +2333,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('2023resultLeveringskostenHigh').innerHTML,
       10
     );
-
-//*******************************
     
     var leveringskostenDifferenceHigh = leveringskosten2023High - leveringskosten2035High;
 
