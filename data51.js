@@ -1729,7 +1729,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var isStroom2InputValid = stroom2Input && !isNaN(stroom2Input);
     
-    if(stroomInput2 == 0)
+    if(stroom2Input == 0)
     {
       document.getElementsByClassName('resultaat-verbruik-blocks')[0].children[1].style.display = 'none';
     }
@@ -1739,7 +1739,7 @@ document.addEventListener('DOMContentLoaded', function () {
       stroom3Input = 0;
     }
 
-    if(stroomInput3 == 0)
+    if(stroom3Input == 0)
     {
       document.getElementsByClassName('resultaat-verbruik-blocks')[0].children[2].style.display = 'none';
     }
