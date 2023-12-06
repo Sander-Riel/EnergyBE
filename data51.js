@@ -1821,7 +1821,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var selectedHeatingSystem = document.querySelector(
       'input[name="Verwarmen-radio-group"]:checked'
-    ).value;
+    ).id;
     
     document.getElementById('cvList').style.display = 'none';
     document.getElementById('hybridewarmtepompList').style.display = 'none';
