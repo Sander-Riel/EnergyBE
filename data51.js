@@ -1818,6 +1818,7 @@ document.addEventListener('DOMContentLoaded', function () {
         break;
     }
 
+
     var selectedHeatingSystem = document.querySelector(
       'input[name="Verwarmen-radio-group"]:checked'
     ).value;
@@ -1835,10 +1836,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('hybridewarmtepompList').style.display = 'block';
         break;
       case 'Luchtwarmtepomp':
-        document.getElementById('luchtwarmtepompList').style.display = 'none';
+        document.getElementById('luchtwarmtepompList').style.display = 'block';
         break;
       case 'Stadsverwarming':
-        document.getElementById('stadsverwarmingList').style.display = 'none';
+        document.getElementById('stadsverwarmingList').style.display = 'block';
         break;
     }
 
