@@ -1818,6 +1818,30 @@ document.addEventListener('DOMContentLoaded', function () {
         break;
     }
 
+    var selectedHeatingSystem = document.querySelector(
+      'input[name="Verwarmen-radio-group"]:checked'
+    ).value;
+    
+    document.getElementById('cvList').style.display = 'none';
+    document.getElementById('hybridewarmtepompList').style.display = 'none';
+    document.getElementById('luchtwarmtepompList').style.display = 'none';
+    document.getElementById('stadsverwarmingList').style.display = 'none';
+    
+    switch (selectedHeatingSystem) {
+      case 'CV-ketel':
+        document.getElementById('cvList').style.display = 'block';
+        break;
+      case 'Hybride-warmtepomp':
+        document.getElementById('hybridewarmtepompList').style.display = 'block';
+        break;
+      case 'Luchtwarmtepomp':
+        document.getElementById('luchtwarmtepompList').style.display = 'none';
+        break;
+      case 'Stadsverwarming':
+        document.getElementById('stadsverwarmingList').style.display = 'none';
+        break;
+    }
+
     var resultTeruglevering2023 = zonnepanelenValue * 0.08;
     var resultTeruglevering2023High = zonnepanelenValue * 0.08;
     var resultTeruglevering2035Low = zonnepanelenValue * 0.1;
